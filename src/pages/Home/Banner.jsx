@@ -1,13 +1,16 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "motion/react"
 import person from '../../assets/480442282_1349359656512565_4705522928167712045_n-removebg-preview.png'
+import { Helmet } from "react-helmet-async";
 
 const Banner = () => {
     return (
         <div className="bg-black ">
-           
+            <Helmet>
+        <title>Home</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
            <div className="flex max-sm:flex-col-reverse max-sm:gap-9 justify-between items-center w-11/12 mx-auto">
-
            <motion.div
 
            initial={{ opacity: 0, scale: 0.5 }}
