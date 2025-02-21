@@ -41,7 +41,7 @@ const Banner = () => {
            animate={{ x:[0, 50, 0]}} 
            transition={{duration:10, delay:1, repeat:Infinity}}
             className={`
-        p-3 rounded-full  text-xl mt-3 text-center w-1/3 font-semibold
+        p-3 max-sm:py-1 rounded-full  text-xl mt-3 text-center w-1/3 font-semibold
         text-slate-100
         transition-all
     shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
@@ -52,11 +52,18 @@ const Banner = () => {
         Contact
            
             </motion.div>
-  
             </motion.div>
-            <div className="w-5/12 max-sm:w-full ">
+            <motion.div
+             initial={{ opacity: 0, scale: 0.5 }}
+             animate={{ opacity: 1, scale: 1 }}
+             transition={{
+                 duration: 1.5,
+                 delay: 1,
+                 ease: [0, 0.71, 0.2, 1.01],
+             }}
+            className="w-5/12 max-sm:w-full ">
                 <img className="w-[500px] h-[500px] object-cover" src={person} alt=""  />
-            </div>
+            </motion.div>
 
            </div>
         </div>

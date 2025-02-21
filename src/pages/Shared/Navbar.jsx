@@ -31,7 +31,7 @@ const [open, setOpen] = useState(false)
                 <li><Link className="relative text-white text-[18px] capitalize no-underline before:absolute before:left-0 before:bottom-[-6px] before:w-0 before:h-[2px] before:bg-[#ff0051cc] before:transition-all before:duration-500 hover:before:w-full">Home</Link></li>
                 <li><Link className="relative text-white text-[18px] capitalize no-underline before:absolute before:left-0 before:bottom-[-6px] before:w-0 before:h-[2px] before:bg-[#ff0051cc] before:transition-all before:duration-500 hover:before:w-full">About</Link></li>
                 <li><Link className="relative text-white text-[18px] capitalize no-underline before:absolute before:left-0 before:bottom-[-6px] before:w-0 before:h-[2px] before:bg-[#ff0051cc] before:transition-all before:duration-500 hover:before:w-full">Servises</Link></li>
-                <li><Link className="relative text-white text-[18px] capitalize no-underline before:absolute before:left-0 before:bottom-[-6px] before:w-0 before:h-[2px] before:bg-[#ff0051cc] before:transition-all before:duration-500 hover:before:w-full">Contact</Link></li>
+                <li><Link to='contact' className="relative text-white text-[18px] capitalize no-underline before:absolute before:left-0 before:bottom-[-6px] before:w-0 before:h-[2px] before:bg-[#ff0051cc] before:transition-all before:duration-500 hover:before:w-full">Contact</Link></li>
             </ul>
 
         </div>
