@@ -1,6 +1,7 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "motion/react"
 import person from '../../assets/480442282_1349359656512565_4705522928167712045_n-removebg-preview.png'
+
 const Banner = () => {
     return (
         <div className="bg-black ">
@@ -32,6 +33,23 @@ const Banner = () => {
          />
        </h1>
         <p className="text-slate-200 mt-4">From Dhaka, Bangladesh. I’m a Graphic designer who is passionate about making error-free websites. I am good at video Edting. I love to talk with you about your unique. </p>
+       
+            <motion.div 
+           animate={{ x:[0, 50, 0]}} 
+           transition={{duration:10, delay:1, repeat:Infinity}}
+            className={`
+        p-3 rounded-full  text-xl mt-3 text-center w-1/3 font-semibold
+        text-slate-100
+        transition-all
+    shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+
+        hover:shadow-[-5px_-5px_10px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
+        hover:text-violet-500
+    `}>
+        Contact
+           
+            </motion.div>
+  
             </motion.div>
             <div className="w-5/12 max-sm:w-full ">
                 <img className="w-[500px] h-[500px] object-cover" src={person} alt=""  />
