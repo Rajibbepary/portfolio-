@@ -35,7 +35,7 @@ const Banner = () => {
            
          />
        </h1>
-        <p className="text-slate-200 mt-4">From Dhaka, Bangladesh. I’m a Graphic designer who is passionate about making error-free websites. I am good at video Edting. I love to talk with you about your unique. </p>
+        <p className="text-slate-200 mt-4">From Dhaka, Bangladesh. I’m a Graphic designer who is passionate about making Graphic. I am good at video Edting. I love to talk with you about your unique. </p>
        
             <motion.div 
            animate={{ x:[0, 50, 0]}} 

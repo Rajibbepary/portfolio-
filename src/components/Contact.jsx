@@ -7,11 +7,25 @@ import home from '../assets/home_5591266.png'
 import man from '../assets/teacher_7162968.png'
 import email from '../assets/email_552486.png'
 import ReCAPTCHA from "react-google-recaptcha";
+import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
-    function onChange(value) {
-        console.log("Captcha value:", value);
-      }
-      
+
+
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+      } = useForm();
+    
+      const onSubmit = (data) => {
+        toast.success("Form submitted successfully!");
+        console.log(data);
+        reset();
+      };
+   
 
     return (
         <div className="w-full bg-black mx-auto ">
@@ -20,7 +34,7 @@ const Contact = () => {
                 <p className="text-slate-100 mt-3 mb-10"> Let is Talk About Ideas​</p>
                  </div>
 <div className="w-11/12 mx-auto flex justify-between max-sm:flex-col-reverse">
-        <div className="md:w-1/2">
+        <div className="md:w-1/2 max-sm:mt-4">
             <div>
                 <img src={contact} className="rounded-xl" alt=""  />
                 <h1 className="text-3xl font-semibold font-poppins text-slate-100 mt-4">Imran Hossain</h1>
@@ -29,7 +43,7 @@ const Contact = () => {
                </p>
                <p className="text-slate-100"> I am here. 🙂</p>
             </div>
-            <div className="flex justify-between items-center mb-14 mt-6">
+            <div className="flex justify-between max-sm:flex-col max-sm:items-start items-center mb-14 mt-6">
                 <div className="flex gap-4 items-center justify-between">
                     <img className="w-8 h-8 object-cover" src={home} alt="" />
                     <div>
@@ -53,72 +67,81 @@ const Contact = () => {
                 </div>
             </div>
         </div>
-        <div className="md:w-1/2 flex flex-col gap-3">
+        <div className="md:w-1/2 ">
+      <ToastContainer />
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
+        <TextField
+          label="Your Name"
+          variant="outlined"
+          fullWidth
+          {...register("name", { required: "Name is required" })}
+          error={!!errors.name}
+          helperText={errors.name?.message}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": { borderColor: "green" },
+              "&.Mui-focused fieldset": { borderColor: "grey" },
+              "& input": { color: "grey" },
+            },
+            "& .MuiInputLabel-root": { color: "green" },
+            "& .MuiInputLabel-root.Mui-focused": { color: "grey" },
+          }}
+        />
 
-        
-            <TextField 
-                label="Your Name" 
-                variant="outlined" 
-                fullWidth 
-                sx={{
-                    "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "green" }, 
-                    "&.Mui-focused fieldset": { borderColor: "grey" },
-                    "& input": { color: "grey" }  
-                    },
-                    "& .MuiInputLabel-root": { color: "green" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
-                }}
-                />
-          
-       
-            <TextField 
-                label="example@mail.com" 
-                variant="outlined" 
-                fullWidth 
-                sx={{
-                    "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "green" },  
-                    "&.Mui-focused fieldset": { borderColor: "grey" }, 
-                    "& input": { color: "grey" } 
-                    },
-                    "& .MuiInputLabel-root": { color: "green" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
-                }}
-                />
-                
+        <TextField
+          label="example@mail.com"
+          variant="outlined"
+          fullWidth
+          {...register("email", {
+            required: "Email is required",
+            pattern: {
+              value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i,
+              message: "Invalid email address",
+            },
+          })}
+          error={!!errors.email}
+          helperText={errors.email?.message}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": { borderColor: "green" },
+              "&.Mui-focused fieldset": { borderColor: "grey" },
+              "& input": { color: "grey" },
+            },
+            "& .MuiInputLabel-root": { color: "green" },
+            "& .MuiInputLabel-root.Mui-focused": { color: "grey" },
+          }}
+        />
 
-                    <TextField 
-                        name=""
-                        label="Write your message" 
-                        variant="outlined" 
-                        fullWidth 
-                        sx={{
-                            "& .MuiOutlinedInput-root": {
-                                "& fieldset": { borderColor: "green" }, 
-                                //"&:hover fieldset": { borderColor: "red" }, 
-                                "&.Mui-focused fieldset": { borderColor: "grey" },
-                                "& input": { color: "grey" },
-                                height: "90px"  
-                            },
-                            "& .MuiInputBase-input": {
-                                height: "90px", 
-                                padding: "18.5px 14px" 
-                            },
-                            "& .MuiInputLabel-root": { color: "green" }, 
-                            "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
-                        }}
-                    />
-                   
-                   <ReCAPTCHA
-                    sitekey="6LcA6t4qAAAAAOKJ-u-T2czZ7NuOkL3blRmsl8bf"
-                    onChange={onChange}
-                />,
+        <TextField
+          label="Write your message"
+          variant="outlined"
+          fullWidth
+          multiline
+          rows={4}
+          {...register("message", { required: "Message is required" })}
+          error={!!errors.message}
+          helperText={errors.message?.message}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              "& fieldset": { borderColor: "green" },
+              "&.Mui-focused fieldset": { borderColor: "grey" },
+              "& input": { color: "grey" },
+            },
+            "& .MuiInputLabel-root": { color: "green" },
+            "& .MuiInputLabel-root.Mui-focused": { color: "grey" },
+          }}
+        />
 
-                
-            <Button variant="contained" color="success">Submit</Button>
+        <ReCAPTCHA
+          sitekey="6LcA6t4qAAAAAOKJ-u-T2czZ7NuOkL3blRmsl8bf"
+          onChange={() => console.log("Captcha verified")}
+        />
 
-        </div>
+        <Button type="submit" variant="contained" color="success" >
+          Submit
+        </Button>
+      </form>
+    </div>
        </div>
         </div>    
     );
