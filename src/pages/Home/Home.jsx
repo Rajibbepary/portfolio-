@@ -1,4 +1,4 @@
-import Contact from "../../components/Contact";
+
 import Banner from "./Banner";
 
 
@@ -7,7 +7,7 @@ const Home = () => {
         <div>
            
             <Banner/>
-            <Contact/>
+           
         </div>
     );
 };

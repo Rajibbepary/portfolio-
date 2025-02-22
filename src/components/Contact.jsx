@@ -6,7 +6,13 @@ import contact from '../assets/contact1.png'
 import home from '../assets/home_5591266.png'
 import man from '../assets/teacher_7162968.png'
 import email from '../assets/email_552486.png'
+import ReCAPTCHA from "react-google-recaptcha";
 const Contact = () => {
+    function onChange(value) {
+        console.log("Captcha value:", value);
+      }
+      
+
     return (
         <div className="w-full bg-black mx-auto ">
             <div className="text-center ">
@@ -23,82 +29,92 @@ const Contact = () => {
                </p>
                <p className="text-slate-100"> I am here. 🙂</p>
             </div>
-            <div>
-                <div>
+            <div className="flex justify-between items-center mb-14 mt-6">
+                <div className="flex gap-4 items-center justify-between">
                     <img className="w-8 h-8 object-cover" src={home} alt="" />
+                    <div>
+                        <p className="text-xl text-slate-50 font-medium">Address</p>
+                        <p className="text-sm text-slate-50">Farid Pur Bangladesh</p>
+                    </div>
                 </div>
-                <div>
+                <div className="flex gap-4 items-center ">
                     <img className="w-8 h-8 object-cover" src={man} alt="" />
+                    <div>
+                        <p className="text-xl text-slate-50 font-medium">Freelance</p>
+                        <p className="text-sm text-slate-50"> Available Right Now</p>
+                    </div>
                 </div>
-                <div>
+                <div className="flex gap-4 items-center">
                     <img className="w-8 h-8 object-cover" src={email} alt="" />
+                    <div>
+                        <p className="text-xl text-slate-50 font-medium">Email</p>
+                        <p className="text-sm text-slate-50"> imran@gmail.com</p>
+                    </div>
                 </div>
             </div>
         </div>
         <div className="md:w-1/2 flex flex-col gap-3">
 
-            <div className="flex gap-3 max-sm:flex-col">
+        
             <TextField 
-                label="First Name" 
+                label="Your Name" 
                 variant="outlined" 
                 fullWidth 
                 sx={{
                     "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "red" }, 
-                    "&:hover fieldset": { borderColor: "green" }, 
-                    "&.Mui-focused fieldset": { borderColor: "blue" } 
+                    "& fieldset": { borderColor: "green" }, 
+                    "&.Mui-focused fieldset": { borderColor: "grey" },
+                    "& input": { color: "grey" }  
                     },
-                    "& .MuiInputLabel-root": { color: "red" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "blue" }  
+                    "& .MuiInputLabel-root": { color: "green" }, 
+                    "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
                 }}
                 />
-
-        <TextField 
-                label="First Name" 
-                variant="outlined" 
-                fullWidth 
-                sx={{
-                    "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "red" }, 
-                    "&:hover fieldset": { borderColor: "green" }, 
-                    "&.Mui-focused fieldset": { borderColor: "blue" } 
-                    },
-                    "& .MuiInputLabel-root": { color: "red" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "blue" }  
-                }}
-                />
-
-            </div>
+          
        
             <TextField 
-                label="First Name" 
+                label="example@mail.com" 
                 variant="outlined" 
                 fullWidth 
                 sx={{
                     "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "red" }, 
-                    "&:hover fieldset": { borderColor: "green" }, 
-                    "&.Mui-focused fieldset": { borderColor: "blue" } 
+                    "& fieldset": { borderColor: "green" },  
+                    "&.Mui-focused fieldset": { borderColor: "grey" }, 
+                    "& input": { color: "grey" } 
                     },
-                    "& .MuiInputLabel-root": { color: "red" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "blue" }  
+                    "& .MuiInputLabel-root": { color: "green" }, 
+                    "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
                 }}
                 />
+                
 
-            <TextField 
-                label="Write your message..." 
-                variant="outlined" 
-                fullWidth 
-                sx={{
-                    "& .MuiOutlinedInput-root": {
-                    "& fieldset": { borderColor: "red" }, 
-                    "&:hover fieldset": { borderColor: "green" }, 
-                    "&.Mui-focused fieldset": { borderColor: "blue" } 
-                    },
-                    "& .MuiInputLabel-root": { color: "red" }, 
-                    "& .MuiInputLabel-root.Mui-focused": { color: "blue" }  
-                }}
-                />
+                    <TextField 
+                        name=""
+                        label="Write your message" 
+                        variant="outlined" 
+                        fullWidth 
+                        sx={{
+                            "& .MuiOutlinedInput-root": {
+                                "& fieldset": { borderColor: "green" }, 
+                                //"&:hover fieldset": { borderColor: "red" }, 
+                                "&.Mui-focused fieldset": { borderColor: "grey" },
+                                "& input": { color: "grey" },
+                                height: "90px"  
+                            },
+                            "& .MuiInputBase-input": {
+                                height: "90px", 
+                                padding: "18.5px 14px" 
+                            },
+                            "& .MuiInputLabel-root": { color: "green" }, 
+                            "& .MuiInputLabel-root.Mui-focused": { color: "grey" }  
+                        }}
+                    />
+                   
+                   <ReCAPTCHA
+                    sitekey="6LcA6t4qAAAAAOKJ-u-T2czZ7NuOkL3blRmsl8bf"
+                    onChange={onChange}
+                />,
+
                 
             <Button variant="contained" color="success">Submit</Button>
 
