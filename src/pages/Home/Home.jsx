@@ -1,4 +1,6 @@
 
+//import Auto from "../../components/Auto";
+import ContactCard from "../../components/ContactCard";
 import Banner from "./Banner";
 
 
@@ -7,7 +9,8 @@ const Home = () => {
         <div>
            
             <Banner/>
-           
+           <ContactCard/>
+           {/* <Auto/> */}
         </div>
     );
 };

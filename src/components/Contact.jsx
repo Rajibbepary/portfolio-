@@ -10,6 +10,8 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Helmet } from "react-helmet-async";
+import { motion } from 'motion/react';
 const Contact = () => {
 
 
@@ -28,7 +30,19 @@ const Contact = () => {
    
 
     return (
-        <div className="w-full bg-black mx-auto ">
+        <motion.div 
+        initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 1.5,
+                delay: 1,
+                ease: [0, 0.71, 0.2, 1.01],
+            }}
+        className="w-full bg-black mx-auto ">
+            <Helmet>
+                  <title>Imran | Contact</title>
+                
+                </Helmet>
             <div className="text-center ">
                 <h3 className="text-5xl font-semibold text-slate-100">Contact​</h3>
                 <p className="text-slate-100 mt-3 mb-10"> Let is Talk About Ideas​</p>
@@ -62,7 +76,7 @@ const Contact = () => {
                     <img className="w-8 h-8 object-cover" src={email} alt="" />
                     <div>
                         <p className="text-xl text-slate-50 font-medium">Email</p>
-                        <p className="text-sm text-slate-50"> imran@gmail.com</p>
+                        <p className="text-sm text-slate-50"> Imranajir88@gmail.com</p>
                     </div>
                 </div>
             </div>
@@ -116,7 +130,6 @@ const Contact = () => {
           label="Write your message"
           variant="outlined"
           fullWidth
-          multiline
           rows={4}
           {...register("message", { required: "Message is required" })}
           error={!!errors.message}
@@ -126,6 +139,7 @@ const Contact = () => {
               "& fieldset": { borderColor: "green" },
               "&.Mui-focused fieldset": { borderColor: "grey" },
               "& input": { color: "grey" },
+              height: "100px",
             },
             "& .MuiInputLabel-root": { color: "green" },
             "& .MuiInputLabel-root.Mui-focused": { color: "grey" },
@@ -143,7 +157,7 @@ const Contact = () => {
       </form>
     </div>
        </div>
-        </div>    
+        </motion.div>    
     );
 };
 
