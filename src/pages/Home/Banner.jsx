@@ -1,6 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "motion/react"
-import person from '../../assets/480442282_1349359656512565_4705522928167712045_n-removebg-preview.png'
+import person from '../../assets/ss.png'
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
@@ -20,7 +20,7 @@ const Banner = () => {
                 delay: 1,
                 ease: [0, 0.71, 0.2, 1.01],
             }}
-           className="lg:w-6/12 flex flex-col">
+           className="lg:w-5/12 flex flex-col">
                 <h1 className="uppercase text-white text-[18px] font-medium font-poppins">Hey, My Name is</h1>
                 <h1 className="text-[50px] font-semibold mb-4 text-[#FFFFFF]" >Imran Najir</h1>
             <h1 className='text-white  text-3xl mb-3 font-semibold'>
@@ -64,8 +64,8 @@ const Banner = () => {
                  delay: 1,
                  ease: [0, 0.71, 0.2, 1.01],
              }}
-            className="w-5/12 max-sm:w-full ">
-                <img className="w-[500px] h-[500px] object-cover" src={person} alt=""  />
+            className="w-7/12 max-sm:w-full ">
+                <img className="w-full h-full object-cover" src={person} alt=""  />
 
 
                 {/* <div className="flex ">
