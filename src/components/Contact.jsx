@@ -45,7 +45,7 @@ const Contact = () => {
                 </Helmet>
             <div className="text-center ">
                 <h3 className="text-5xl font-semibold text-slate-100">Contact​</h3>
-                <p className="text-slate-100 mt-3 mb-10"> Let is Talk About Ideas​</p>
+                <p className="text-slate-100 mt-3 mb-10 text-[20px] font-normal"> Let is Talk About Ideas​</p>
                  </div>
 <div className="w-11/12 mx-auto flex justify-between max-sm:flex-col-reverse">
         <div className="md:w-1/2 max-sm:mt-4">
@@ -62,7 +62,7 @@ const Contact = () => {
                     <img className="w-8 h-8 object-cover" src={home} alt="" />
                     <div>
                         <p className="text-xl text-slate-50 font-medium">Address</p>
-                        <p className="text-sm text-slate-50">Farid Pur Bangladesh</p>
+                        <p className="text-sm text-slate-50">Dhaka Bangladesh</p>
                     </div>
                 </div>
                 <div className="flex gap-4 items-center ">

@@ -1,12 +1,12 @@
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "motion/react"
-import person from '../../assets/ss.png'
+import person from '../../assets/imran.png'
 import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
     return (
-        <div className="bg-black ">
+        <div>
             <Helmet>
         <title>Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -20,12 +20,12 @@ const Banner = () => {
                 delay: 1,
                 ease: [0, 0.71, 0.2, 1.01],
             }}
-           className="lg:w-5/12 flex flex-col">
-                <h1 className="uppercase text-white text-[18px] font-medium font-poppins">Hey, My Name is</h1>
+           className="lg:w-6/12 flex flex-col">
+                {/* <h1 className="uppercase text-white text-[18px] font-medium font-poppins">Hey, My Name is</h1> */}
                 <h1 className="text-[50px] font-semibold mb-4 text-[#FFFFFF]" >Imran Najir</h1>
             <h1 className='text-white  text-3xl mb-3 font-semibold'>
          <Typewriter
-           words={['I AM Graphic designer']}
+           words={[' Graphic Designer', 'KDP Expert']}
            loop={0}
            cursor
            cursorStyle='_'
@@ -35,7 +35,7 @@ const Banner = () => {
            
          />
        </h1>
-        <p className="text-slate-200 mt-4">From Dhaka, Bangladesh. I’m a Graphic designer who is passionate about making Graphic. I am good at video Edting. I love to talk with you about your unique. </p>
+        <p className="text-slate-200 mt-4">From Dhaka, Bangladesh. I’m a Graphic designer who is passionate about making Graphic. I am good at KDP Expert. I love to talk with you about your unique. </p>
        
            <Link to='contact'>
            <motion.div 
@@ -64,7 +64,7 @@ const Banner = () => {
                  delay: 1,
                  ease: [0, 0.71, 0.2, 1.01],
              }}
-            className="w-7/12 max-sm:w-full ">
+            className="w-5/12 max-sm:w-full  ">
                 <img className="w-full h-full object-cover" src={person} alt=""  />
 
 

@@ -2,6 +2,7 @@
 //import Auto from "../../components/Auto";
 import ContactCard from "../../components/ContactCard";
 import Banner from "./Banner";
+import HappayClient from "./HappayClient";
 
 
 const Home = () => {
@@ -9,6 +10,7 @@ const Home = () => {
         <div>
            
             <Banner/>
+            <HappayClient/>
            <ContactCard/>
            {/* <Auto/> */}
         </div>
