@@ -2,7 +2,7 @@
 
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-import contact from '../assets/contact1.png'
+import contact from '../assets/download.jpg'
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
@@ -46,10 +46,10 @@ const Contact = () => {
                 <h3 className="text-5xl font-semibold text-slate-100">Contact​</h3>
                 <p className="text-slate-100 mt-3 mb-10 text-[20px] font-normal"> Let is Talk About Ideas​</p>
                  </div>
-<div className="w-11/12 mx-auto flex justify-between max-sm:flex-col-reverse">
+<div className="w-11/12 mx-auto flex justify-between space-x-6 max-sm:flex-col-reverse">
         <div className="md:w-1/2 max-sm:mt-4">
             <div>
-                <img src={contact} className="rounded-xl" alt=""  />
+                <img src={contact} className="rounded-xl w-full h-full object-cover " alt=""  />
                 <h1 className="text-3xl font-semibold font-poppins text-slate-100 mt-4">Imran Hossain</h1>
                 <p className="text-xl font-semibold text-slate-100 mt-2 mb-2">Graphic designer</p>
                 <p className="text-slate-100 ">Are You Looking For Your Business Online Presence?

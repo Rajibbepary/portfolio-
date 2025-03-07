@@ -30,7 +30,7 @@ const Footer = () => {
                 </Link>
              </div>
         <div>
-        <p className="font-normal font-poppins text-center text-[14px]"> © All Rights Reserved 2019 - 2025 <span className="text-[#ff004f]"> |</span> Imran Hossain</p>
+        <p className="font-normal font-poppins text-center text-[14px]"> © All Rights Reserved 2019 - 2025 Imran Najir</p>
         </div>
             </div>
         </div>
