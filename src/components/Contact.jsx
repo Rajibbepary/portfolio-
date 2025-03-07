@@ -137,9 +137,9 @@ const Contact = () => {
           sx={{
             "& .MuiOutlinedInput-root": {
               "& fieldset": { borderColor: "green" },
-              "&.Mui-focused fieldset": { borderColor: "grey" },
+               "&.Mui-focused fieldset": { borderColor: "grey" },
               "& input": { color: "grey" },
-              height: "100px",
+              height: "80px",
             },
             "& .MuiInputLabel-root": { color: "green" },
             "& .MuiInputLabel-root.Mui-focused": { color: "grey" },
