@@ -2,15 +2,18 @@ import { useState } from "react";
 import { FiMenu } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { Link } from "react-router-dom";
-
+import logo from '../../assets/my log-05.png'
 
 
 const Navbar = () => {
 const [open, setOpen] = useState(false)
 
     return (
-     <nav className="flex text-[#FFFFFF] justify-end w-full md:p-6 p-3">
+     <nav className="flex text-[#FFFFFF] justify-between items-center  w-full md:p-6 p-3">
 
+        <div>
+            <img className="w-36 h-full object-cover" src={logo}alt="" />
+        </div>
         <div>
         <button className="md:hidden" onClick={() => setOpen(!open)}>
             {
