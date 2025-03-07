@@ -3,15 +3,14 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import contact from '../assets/contact1.png'
-import home from '../assets/home_5591266.png'
-import man from '../assets/teacher_7162968.png'
-import email from '../assets/email_552486.png'
 import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Helmet } from "react-helmet-async";
 import { motion } from 'motion/react';
+import { IoLocationSharp, IoPerson } from "react-icons/io5";
+import { MdOutlineMail } from "react-icons/md";
 const Contact = () => {
 
 
@@ -38,7 +37,7 @@ const Contact = () => {
                 delay: 1,
                 ease: [0, 0.71, 0.2, 1.01],
             }}
-        className="w-full bg-black mx-auto ">
+        className="w-full mx-auto ">
             <Helmet>
                   <title>Imran | Contact</title>
                 
@@ -59,21 +58,22 @@ const Contact = () => {
             </div>
             <div className="flex justify-between max-sm:flex-col max-sm:items-start items-center mb-14 mt-6">
                 <div className="flex gap-4 items-center justify-between">
-                    <img className="w-8 h-8 object-cover" src={home} alt="" />
+                <IoLocationSharp className="w-8 h-8 text-[#F8B90C]" />
                     <div>
                         <p className="text-xl text-slate-50 font-medium">Address</p>
                         <p className="text-sm text-slate-50">Dhaka Bangladesh</p>
                     </div>
                 </div>
                 <div className="flex gap-4 items-center ">
-                    <img className="w-8 h-8 object-cover" src={man} alt="" />
+               
+                <IoPerson className="w-8 h-8 text-[#F8B90C]" />
                     <div>
                         <p className="text-xl text-slate-50 font-medium">Freelance</p>
                         <p className="text-sm text-slate-50"> Available Right Now</p>
                     </div>
                 </div>
                 <div className="flex gap-4 items-center">
-                    <img className="w-8 h-8 object-cover" src={email} alt="" />
+                <MdOutlineMail className="w-8 h-8 text-[#F8B90C]" />
                     <div>
                         <p className="text-xl text-slate-50 font-medium">Email</p>
                         <p className="text-sm text-slate-50"> Imranajir88@gmail.com</p>
