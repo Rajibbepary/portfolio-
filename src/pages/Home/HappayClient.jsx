@@ -6,7 +6,7 @@ import star from '../../assets/star-of-life.svg'
 const HappayClient = () => {
     return (
         <>
-            <div className=" bg-[#FFBF00] py-4 flex items-center ">
+            <section className=" bg-[#FFBF00] py-4 flex items-center ">
             <Marquee  pauseOnHover={stop} speed={50}>
 
 
@@ -26,7 +26,7 @@ const HappayClient = () => {
         </Marquee>
        
        
-            </div>
+            </section>
         </>
     );
 };

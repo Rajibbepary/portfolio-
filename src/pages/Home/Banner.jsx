@@ -68,64 +68,7 @@ const Banner = () => {
                 <img className="w-full h-full object-cover" src={person} alt=""  />
 
 
-                {/* <div className="flex ">
-                <motion.div 
-                    animate={{ 
-                        x: [10, 30, 10], 
-                        borderColor: ["#3b82f6", "#a855f7", "#3b82f6"], 
-                        boxShadow: [
-                            "0 0 10px #3b82f6, inset 0 0 10px #3b82f6", 
-                            "0 0 20px #a855f7, inset 0 0 20px #a855f7",
-                            "0 0 10px #3b82f6, inset 0 0 10px #3b82f6"  
-                        ]
-                    }} 
-                    transition={{
-                        duration: 10, 
-                        delay: 1, 
-                        repeat: Infinity
-                    }}
-                    className={`
-                        p-3 max-sm:py-1 rounded-full text-xl mt-3 text-center w-1/3 font-semibold
-                        text-slate-100
-                        transition-all
-                        border-2 border-blue-500 // Initial border color
-                        shadow-[-1px_-1px_5px_rgba(59,_130,_246,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(59,_130,_246,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
-                        hover:shadow-[-5px_-5px_10px_rgba(59,_130,_246,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
-                        hover:text-purple-500
-                    `}
-                >
-                    Contact
-                </motion.div>
-
-                        <motion.div 
-                animate={{ 
-                    y: [20, 50, 20], 
-                    borderColor: ["#ffffff", "#9333ea", "#ffffff"], 
-                    boxShadow: [
-                        "0 0 10px #ffffff, inset 0 0 10px #ffffff", 
-                        "0 0 20px #9333ea, inset 0 0 20px #9333ea", 
-                        "0 0 10px #ffffff, inset 0 0 10px #ffffff"  
-                    ]
-                }} 
-                transition={{
-                    duration: 10, 
-                    delay: 1, 
-
-                    repeat: Infinity
-                }}
-                className={`
-                    p-3 max-sm:py-1 rounded-full text-xl mt-3 text-center w-1/3 font-semibold
-                    text-slate-100
-                    transition-all
-                    border-2 border-white // Initial border color
-                    shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
-                    hover:shadow-[-5px_-5px_10px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
-                    hover:text-violet-500
-                `}
-            >
-                Contact
-            </motion.div>
-                </div> */}
+            
             </motion.div>
 
            </div>

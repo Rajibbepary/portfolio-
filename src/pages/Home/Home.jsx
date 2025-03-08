@@ -15,7 +15,9 @@ const Home = () => {
            <Services/>
            </section>
             <HappayClient/>
-           <ContactCard/>
+            <section className="mb-12">
+            <ContactCard/>
+            </section>
            {/* <Auto/> */}
         </div>
     );
