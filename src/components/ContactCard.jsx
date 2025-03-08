@@ -3,7 +3,7 @@ import { BsPersonFill, BsPersonFillCheck } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
 
-const ContactSection = () => {
+const ContactCard = () => {
   return (
     <div className="relative flex w-full py-5">
      
@@ -66,4 +66,4 @@ const ContactSection = () => {
   );
 };
 
-export default ContactSection;
+export default ContactCard;

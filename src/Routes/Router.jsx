@@ -5,6 +5,7 @@ import {
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home";
 import Contact from "../components/Contact";
+import About from "../about/About";
 
  export const router = createBrowserRouter([
     {
@@ -18,7 +19,11 @@ import Contact from "../components/Contact";
         {
           path:'contact',
           element:<Contact/>
-        }
+        },
+       {
+         path:'about',
+         element:<About/>
+       }
       ]
     },
   ]);
