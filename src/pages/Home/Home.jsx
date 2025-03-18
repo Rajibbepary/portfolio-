@@ -1,9 +1,10 @@
 
-//import Auto from "../../components/Auto";
+
 import ContactCard from "../../components/ContactCard";
 import Services from "../../components/Services/Services";
 import Banner from "./Banner";
 import HappayClient from "./HappayClient";
+import Testimonial from "../../testimonial/testimonial";
 
 
 const Home = () => {
@@ -14,6 +15,9 @@ const Home = () => {
            <section className="mb-20">
            <Services/>
            </section>
+        <section className="mb-10">
+        <Testimonial/>
+        </section>
             <HappayClient/>
             <section className="mb-12">
             <ContactCard/>
