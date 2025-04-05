@@ -1,80 +1,68 @@
 
-import { useCallback, useEffect, useState } from 'react';
-import bannerimg  from '../../assets/Screenshot_2025-03-08_232423-removebg-preview.png'
+import './Services.css'
+import normal1 from '../../assets/images/normal1.jpg' 
+import normal2 from '../../assets/images/normal2.jpg'
+import normal3 from '../../assets/images/normal3.jpg'
+import normal4 from '../../assets/images/normal4.jpg'
+import normal5 from '../../assets/images/normal5.jpg'
+import normal6 from '../../assets/images/normal6.jpg'
+import normal7 from '../../assets/images/normal7.jpg'
+import normal8 from '../../assets/images/normal8.jpg'
+import normal9 from '../../assets/images/normal9.jpg'
+import big1 from '../../assets/images/big1.jpg'
+import big2 from '../../assets/images/big2.jpg'
+import big3 from '../../assets/images/big3.jpg'
+import horizontal1 from '../../assets/images/horizontal1.jpg'
+import horizontal2 from '../../assets/images/horizontal2.jpg'
+import horizontal3 from '../../assets/images/horizontal3.jpg'
+import vertical1 from '../../assets/images/vertical1.jpg'
+import vertical2 from '../../assets/images/vertical2.jpg'
+import vertical3 from '../../assets/images/vertical3.jpg'
 const ServicesDetails = () => {
-    const [currentSlider, setCurrentSlider] = useState(0);
-    const carouselImages = ['https://images.unsplash.com/photo-1421789665209-c9b2a435e3dc?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1508873881324-c92a3fc536ba?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1719749990914-a3ba54e6343f?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1467195468637-72eb862bb14e?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D','https://images.unsplash.com/photo-1532155297578-a43684be8db8?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'];
-    const prevSlider = () => setCurrentSlider((currentSlider) => currentSlider === 0 ? carouselImages.length - 1 : currentSlider - 1);
-    const nextSlider = useCallback(() => setCurrentSlider((currentSlider) => currentSlider === carouselImages.length - 1 ? 0 : currentSlider + 1), [carouselImages.length]);
-  
-    // if you don't want to change the slider automatically then you can just remove the useEffect
-    useEffect(() => {
-      const intervalId = setInterval(() => {
-        nextSlider();
-      }, 3000);
-      return () => clearInterval(intervalId);
-    }, [nextSlider]);
-  
-
-
+   
     return (
         <div>
-            <div>
-                <img src={bannerimg} alt="" />
-              
-            </div>
 
-            <div className='flex lg:flex-row md:flex-row flex-col gap-6 w-11/12 mx-auto mb-10'>
-          
-            <div className="h-60 w-full md:h-[470px] lg:h-[540px] relative overflow-hidden">
-          {/* arrow left */}
-          <button onClick={prevSlider} className="absolute top-1/2 left-3 z-50 flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
-              <svg className="icon h-4 w-4 fill-black/50 md:h-6 md:w-6" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"></path></svg>          
-          </button>
-          {/* arrow right */}
-          <button onClick={nextSlider} className="absolute top-1/2 z-50 right-3  flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
-              <svg className="icon h-4 w-4 fill-black/50 md:h-6 md:w-6" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><path d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"></path></svg>
-          </button>
-          {/* dots */}
-          <div className="flex justify-center items-center rounded-full z-50 absolute bottom-4 w-full gap-1">
-            {carouselImages.map((img, idx) => (
-              <button key={`${img}_${idx}`} onClick={() => setCurrentSlider(idx)} className={`rounded-full duration-500 bg-white ${currentSlider === idx ? "w-8" : "wz-2"} h-2`}></button>
-            ))}
-          </div>
-          {/* Carousel container */}
-          <div className="ease-linear duration-500 flex transform-gpu" style={{ transform: `translateX(-${currentSlider * 100}%)`}}>
-            {/* sliders */}
-            {carouselImages.map((slide, idx) => (
-              <img key={slide} src={slide} className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover" alt={`Slider - ${idx + 1}`}/>
-            ))}
-          </div>
-      </div>
-      <div className="h-60 w-full md:h-[470px] lg:h-[540px] relative overflow-hidden">
-          {/* arrow left */}
-          <button onClick={prevSlider} className="absolute top-1/2 left-3 z-50 flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
-              <svg className="icon h-4 w-4 fill-black/50 md:h-6 md:w-6" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><path d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"></path></svg>          
-          </button>
-          {/* arrow right */}
-          <button onClick={nextSlider} className="absolute top-1/2 z-50 right-3  flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
-              <svg className="icon h-4 w-4 fill-black/50 md:h-6 md:w-6" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><path d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"></path></svg>
-          </button>
-          {/* dots */}
-          <div className="flex justify-center items-center rounded-full z-50 absolute bottom-4 w-full gap-1">
-            {carouselImages.map((img, idx) => (
-              <button key={`${img}_${idx}`} onClick={() => setCurrentSlider(idx)} className={`rounded-full duration-500 bg-white ${currentSlider === idx ? "w-8" : "wz-2"} h-2`}></button>
-            ))}
-          </div>
-          {/* Carousel container */}
-          <div className="ease-linear duration-500 flex transform-gpu" style={{ transform: `translateX(-${currentSlider * 100}%)`}}>
-            {/* sliders */}
-            {carouselImages.map((slide, idx) => (
-              <img key={slide} src={slide} className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover" alt={`Slider - ${idx + 1}`}/>
-            ))}
-          </div>
-      </div>
+           
+            <div className="container">
+    <div><img src={normal1} /></div>
+      <div className="vertical"><img src={vertical1} /></div>
+      <div className="horizontal"><img src={horizontal1} /></div>
+      <div><img src={normal2} /></div>
+      <div><img src={normal3} /></div>
+      <div className="big"><img src={big1} /></div>
+      <div><img src={normal4} /></div>
+      <div className="vertical"><img src={vertical2} /></div>
+      <div><img src={normal5}/></div>
+      <div className="horizontal"><img src={horizontal2} /></div>
+      <div><img src={normal6} /></div>
+      <div className="big"><img src={big2} /></div>
+      <div><img src={normal7}/></div>
+      <div className="horizontal"><img src={horizontal3} /></div>
+      <div><img src={normal8} /></div>
+      <div className="big"><img src={big3} /></div>
+      <div><img src={normal9} /></div>
+      <div className="vertical"><img src={vertical3} /></div>
 
-      
-            </div>
+      <div><img src={normal1} /></div>
+      <div className="vertical"><img src={vertical1} /></div>
+      <div className="horizontal"><img src={horizontal1} /></div>
+      <div><img src={normal2} /></div>
+      <div><img src={normal3} /></div>
+      <div className="big"><img src={big1} /></div>
+      <div><img src={normal4} /></div>
+      <div className="vertical"><img src={vertical2} /></div>
+      <div><img src={normal5}/></div>
+      <div className="horizontal"><img src={horizontal2} /></div>
+      <div><img src={normal6} /></div>
+      <div className="big"><img src={big2} /></div>
+      <div><img src={normal7}/></div>
+      <div className="horizontal"><img src={horizontal3} /></div>
+      <div><img src={normal8} /></div>
+      <div className="big"><img src={big3} /></div>
+      <div><img src={normal9} /></div>
+      <div className="vertical"><img src={vertical3} /></div>
+    </div>
         </div>
     );
 };
