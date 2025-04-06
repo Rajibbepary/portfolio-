@@ -18,11 +18,14 @@ import horizontal3 from '../../assets/images/horizontal3.jpg'
 import vertical1 from '../../assets/images/vertical1.jpg'
 import vertical2 from '../../assets/images/vertical2.jpg'
 import vertical3 from '../../assets/images/vertical3.jpg'
+
 const ServicesDetails = () => {
-   
+ 
+
+
     return (
         <div>
-
+  
            
             <div className="container">
     <div><img src={normal1} /></div>
