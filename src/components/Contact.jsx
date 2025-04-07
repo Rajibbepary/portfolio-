@@ -3,7 +3,7 @@
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import contact from '../assets/download.jpg'
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -27,6 +27,10 @@ const Contact = () => {
         reset();
       };
    
+      // function onChange(value) {
+      //   console.log("Captcha value:", value);
+      // }
+
 
     return (
         <motion.div 
@@ -146,10 +150,12 @@ const Contact = () => {
           }}
         />
 
-        <ReCAPTCHA
+        {/* <ReCAPTCHA
           sitekey="6LcA6t4qAAAAAOKJ-u-T2czZ7NuOkL3blRmsl8bf"
-          onChange={() => console.log("Captcha verified")}
-        />
+          onChange={onChange}
+        /> */}
+
+   
 
         <Button type="submit" variant="contained" color="success" >
           Submit
